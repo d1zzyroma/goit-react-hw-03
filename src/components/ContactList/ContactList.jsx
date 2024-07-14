@@ -1,10 +1,10 @@
 import Contact from "../Contact/Contact";
-
-const ContactList = ( {contactData} ) => {
+import css from "./ContactList.module.css"
+const ContactList = ( {contactData, deleteContact} ) => {
     return(
-        <ul>
+        <ul className={css.list}>
             {contactData.map((element) =>{
-                return  <li key={element.id}><Contact name={element.name} phoneNumber={element.number}/></li>
+                return  <li key={element.id}><Contact id={element.id} name={element.name} phoneNumber={element.number} deleteContact={deleteContact}/></li>
                 
             })}
         </ul>
