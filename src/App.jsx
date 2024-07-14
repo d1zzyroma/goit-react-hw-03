@@ -6,7 +6,7 @@ import ContactForm from "./components/ContactForm/ContactForm";
 import { nanoid } from 'nanoid';
 
 function App() {
-  localStorage.clear()
+  
   const [inputValue, setInputValue] = useState("");
   const [contacts, setContacts] = useState(() => {
     const savedContacts = localStorage.getItem("contacts");
@@ -20,6 +20,7 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("contacts", JSON.stringify(contacts));
+    
   }, [contacts]);
 
   const filteredValues = () => {
